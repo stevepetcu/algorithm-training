@@ -2,7 +2,7 @@
 
 namespace StefanPetcu\Algorithms\Sorter;
 
-class MergeSorter
+class MergeSorter implements Sorter
 {
     /**
      * Sorts an array in ascending order.

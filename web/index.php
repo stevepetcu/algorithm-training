@@ -18,7 +18,7 @@ if (!empty($_POST) && !empty($_FILES)) {
 
         $sorter = $_POST['sortAlgorithms'] == 'merge-sort'
             ? new \StefanPetcu\Algorithms\Sorter\MergeSorter()
-            : new \StefanPetcu\Algorithms\Sorter\MergeSorter();
+            : new \StefanPetcu\Algorithms\Sorter\QuickSorter();
 
         $start = microtime(true);
         $result = $sorter->sort($array);

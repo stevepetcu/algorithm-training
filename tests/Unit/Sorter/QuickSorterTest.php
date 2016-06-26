@@ -1,18 +1,18 @@
 <?php
 
-namespace Tests\Sorter\MergeSorter;
+namespace Tests\Sorter\QuickSorter;
 
 use PHPUnit_Framework_TestCase;
-use StefanPetcu\Algorithms\Sorter\MergeSorter;
+use StefanPetcu\Algorithms\Sorter\QuickSorter;
 
-class MergeSorterTest extends PHPUnit_Framework_TestCase
+class QuickSorterTest extends PHPUnit_Framework_TestCase
 {
-    /** @var  MergeSorter */
+    /** @var  QuickSorter */
     private $sorter;
 
     protected function setUp()
     {
-        $this->sorter = new MergeSorter();
+        $this->sorter = new QuickSorter();
     }
 
     public function testSortReturnsArraySortedInAscendingOrderWhenPassedArrayArgument()
@@ -28,7 +28,7 @@ class MergeSorterTest extends PHPUnit_Framework_TestCase
     /**
      * @expectedException \TypeError
      */
-    public function testNotCallingSortWithArrayParameterThrowsTypeException()
+    public function testNotCallingSortWithArrayParameterThrowsCatchableFatalError()
     {
         $this->sorter->sort('Not an array.');
     }
