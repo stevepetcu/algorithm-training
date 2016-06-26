@@ -2,7 +2,7 @@
 
 require 'bootstrap.php';
 
-if (!empty($_POST) && !empty($_FILES)) {
+if (isset($_POST, $_FILES['data-file']['tmp_name'])) {
     $handle = fopen($_FILES['data-file']['tmp_name'], 'r');
     $fileContents = fread($handle, filesize($_FILES['data-file']['tmp_name']));
     fclose($handle);
