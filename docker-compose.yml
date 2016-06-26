@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  nginx:
+    build: docker/nginx
+    networks:
+      - network_1
+    ports:
+      - 80:80
+    volumes_from:
+      - php:ro
+
+  php:
+    build: docker/php-fpm
+    networks:
+      - network_1
+    volumes:
+      - ./:/var/www/html
+
+networks:
+  network_1:
+    driver: bridge

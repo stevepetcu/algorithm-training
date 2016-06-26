@@ -1,0 +1,22 @@
+{% extends 'general.twig' %}
+{% block content %}
+    <h1 class="display-3">Results</h1>
+    <table class="table table-hover table-responsive small text-lg-left">
+        <thead>
+        <tr>
+            <th>Time taken</th>
+            <th>Array count</th>
+            <th>Initial array</th>
+            <th>Sorted array</th>
+        </tr>
+        <tr>
+            <td>{{ time }}</td>
+            <td>{{ count }}</td>
+            <td>{{ arrayChunkOne }}, ..., {{ arrayChunkTwo }}</td>
+            <td>{{ resultChunkOne }}, ..., {{ resultChunkTwo }}</td>
+        </tr>
+        </thead>
+    </table>
+    <br>
+    <a href="/" class="clearfix btn btn-success-outline">Back</a>
+{% endblock %}

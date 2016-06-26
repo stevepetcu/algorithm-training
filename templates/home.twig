@@ -1,0 +1,34 @@
+{% extends 'general.twig' %}
+
+{% block content %}
+    <h1 class="display-3">Upload data file</h1>
+    <p class="lead">Please upload a file containing some data<sup>*</sup> you wish to sort.</p>
+    <hr>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="text-lg-left">
+            <fieldset class="form-group">
+                <label for="sortable-data-file">Data file input</label>
+                <input type="file" name="data-file" class="form-control-file" id="sortable-data-file">
+                <small class="text-muted">
+                    <sup>*</sup> The data must be numeric (the items will be converted to integers) and the file
+                    should be structured like a list,
+                    containing just one item (integer) per row and nothing else.
+                </small>
+            </fieldset>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="sortAlgorithms" id="merge-sort" value="merge-sort" checked>
+                    Use MergeSort
+                </label>
+            </div>
+            <div class="radio disabled">
+                <label>
+                    <input type="radio" name="sortAlgorithms" id="quick-sort" value="quick-sort" disabled>
+                    Use QuickSort
+                </label>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-info-outline">Sort!</button>
+    </form>
+{% endblock %}
